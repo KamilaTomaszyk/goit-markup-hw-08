@@ -39,7 +39,6 @@
     }
   }
   @media screen and (min-width: 1200px) {
-    max-width: 1600px;
     background-image: linear-gradient(
         90deg,
         var(--shadow-grey),
@@ -56,6 +55,7 @@
         ),
         url(../images/imgdesk@2x.jpg);
     }
+    max-width: 1600px;
   }
 
   &__baner {
