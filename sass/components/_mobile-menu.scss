@@ -1,0 +1,118 @@
+.mobile-menu__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: initial;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.d-none {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(100%);
+}
+
+.mobile-menu {
+  & {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 40px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: var(--main-white);
+    background-color: var(--main-white);
+    z-index: 998;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    background-color: var(--main-white);
+    border: none;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__btn:hover,
+  &__btn:active,
+  &__btn:focus {
+    fill: var(--main-blue);
+  }
+
+  &__link-nav,
+  &__link-contact--mail,
+  &__link-contact--tel,
+  &__link-social {
+    text-decoration: none;
+  }
+  &__link-nav {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    color: var(--second-black);
+  }
+  &__link-nav-accent {
+    color: var(--main-blue);
+  }
+  &__item-nav:not(:last-child) {
+    margin-bottom: 32px;
+  }
+  &__list-nav {
+    margin-bottom: auto;
+  }
+
+  &__link-contact--tel {
+    margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    color: var(--main-blue);
+  }
+  &__list-contact--tel {
+    margin-bottom: 32px;
+  }
+  &__link-contact--mail {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+
+    color: var(--main-silver);
+  }
+  &__list-contact--mail {
+    margin-bottom: 64px;
+  }
+  &__list-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  &__link-social {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+
+    color: var(--main-blue);
+  }
+  &__item-social:not(:last-child) &__link-social {
+    display: flex;
+    padding-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+  }
+}
